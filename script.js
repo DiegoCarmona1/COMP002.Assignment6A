@@ -21,16 +21,16 @@ function reliableMultiply(a, b) {
   if (primitiveMultiply(a, b) == isFinite) {
     return a * b;
   } else {
-    return "Incorrect Syntax";
+    return console.log("Improper syntax");
   }
 }
 try {
   console.log(primitiveMultiply(3, 4));
 } catch(error){
-  if (error instanceof MultiplicatorUnitFailure("Klunk")){
-    console.log(primitiveMultiply(3, 4))
+  if (error instanceof MultiplicatorUnitFailure){
+    console.log(primitiveMultiply(3, 4));
   } else {
-    throw new error ("Rethrow")
+    throw MultiplicatorUnitFailure ("Crunch");
   }
 }
 console.log(reliableMultiply(8, 8))
