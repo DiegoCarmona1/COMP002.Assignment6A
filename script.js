@@ -30,7 +30,7 @@ try {
   if (error instanceof MultiplicatorUnitFailure){
     console.log(primitiveMultiply(3, 4));
   } else {
-    throw MultiplicatorUnitFailure ("Crunch");
+    throw new MultiplicatorUnitFailure ("Crunch");
   }
 }
 console.log(reliableMultiply(8, 8))
