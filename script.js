@@ -18,4 +18,19 @@ function primitiveMultiply(a, b) {
 
 function reliableMultiply(a, b) {
   // Your code here.
+  if (primitiveMultiply(a, b) == isFinite) {
+    return a * b;
+  } else {
+    return "Incorrect Syntax";
+  }
 }
+try {
+  console.log(primitiveMultiply(3, 4));
+} catch(error){
+  if (error instanceof MultiplicatorUnitFailure){
+    console.log(primitiveMultiply(3, 4))
+  } else {
+    throw new error ("Rethrow")
+  }
+}
+console.log(reliableMultiply(8, 8))
