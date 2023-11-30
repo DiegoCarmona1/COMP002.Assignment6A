@@ -27,7 +27,7 @@ function reliableMultiply(a, b) {
 try {
   console.log(primitiveMultiply(3, 4));
 } catch(error){
-  if (error instanceof MultiplicatorUnitFailure){
+  if (error instanceof MultiplicatorUnitFailure("Klunk")){
     console.log(primitiveMultiply(3, 4))
   } else {
     throw new error ("Rethrow")
