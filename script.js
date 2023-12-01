@@ -18,9 +18,11 @@ function primitiveMultiply(a, b) {
 
 function reliableMultiply(a, b) {
     try {
+      // Why does it need to be return as opposed to console.log(primitive multiply)?
       return primitiveMultiply(a, b);
     } catch(error){
       if (error instanceof MultiplicatorUnitFailure){
+        //This one as well why specifically return?
           return reliableMultiply(a, b);
       } else {
         throw error;
