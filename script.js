@@ -18,14 +18,13 @@ function primitiveMultiply(a, b) {
 
 function reliableMultiply(a, b) {
     try {
-      console.log(primitiveMultiply(3, 4));
+      return primitiveMultiply(a, b);
     } catch(error){
       if (error instanceof MultiplicatorUnitFailure){
-          console.log(reliableMultiply(3,4));
+          return reliableMultiply(a, b);
       } else {
         throw error;
       }
     }
   }
-}
 console.log(reliableMultiply(8, 8))
