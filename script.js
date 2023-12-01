@@ -24,13 +24,18 @@ function reliableMultiply(a, b) {
     return console.log("Improper syntax");
   }
 }
-try {
-  console.log(primitiveMultiply(3, 4));
-} catch(error){
-  if (error instanceof MultiplicatorUnitFailure){
+
+
+  try {
     console.log(primitiveMultiply(3, 4));
-  } else {
-    throw new MultiplicatorUnitFailure ("Crunch");
+  } catch(error){
+    if (error instanceof MultiplicatorUnitFailure){
+      for(;;){
+        console.log(primitiveMultiply(3,4))
+      }
+    } else {
+      throw error;
+    }
   }
-}
+
 console.log(reliableMultiply(8, 8))
