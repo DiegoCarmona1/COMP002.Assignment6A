@@ -17,25 +17,15 @@ function primitiveMultiply(a, b) {
 }
 
 function reliableMultiply(a, b) {
-  // Your code here.
-  if (primitiveMultiply(a, b) == isFinite) {
-    return a * b;
-  } else {
     try {
       console.log(primitiveMultiply(3, 4));
     } catch(error){
       if (error instanceof MultiplicatorUnitFailure){
-        for(;;){
-          console.log(primitiveMultiply(3,4));
-        }
+          console.log(reliableMultiply(3,4));
       } else {
         throw error;
       }
     }
   }
 }
-
-
-
-
 console.log(reliableMultiply(8, 8))
