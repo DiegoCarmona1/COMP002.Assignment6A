@@ -21,21 +21,21 @@ function reliableMultiply(a, b) {
   if (primitiveMultiply(a, b) == isFinite) {
     return a * b;
   } else {
-    return console.log("Improper syntax");
+    try {
+      console.log(primitiveMultiply(3, 4));
+    } catch(error){
+      if (error instanceof MultiplicatorUnitFailure){
+        for(;;){
+          console.log(primitiveMultiply(3,4));
+        }
+      } else {
+        throw error;
+      }
+    }
   }
 }
 
 
-  try {
-    console.log(primitiveMultiply(3, 4));
-  } catch(error){
-    if (error instanceof MultiplicatorUnitFailure){
-      for(;;){
-        console.log(primitiveMultiply(3,4))
-      }
-    } else {
-      throw error;
-    }
-  }
+
 
 console.log(reliableMultiply(8, 8))
